@@ -272,6 +272,5 @@ public class RadioTest {
         int actualRadioStation = radioStation.getCurrentRadioStation();
         Assertions.assertEquals(expectedRadioStation, actualRadioStation);
     }
-
-
+    
 }
