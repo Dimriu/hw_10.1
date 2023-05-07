@@ -53,6 +53,7 @@ public class Radio {
         return minRadioStation;
     }
 
+    int newCurrentRadioStation = currentRadioStation;
     public void setCurrentRadioStation(int newCurrentRadioStation) {
         if (newCurrentRadioStation < minRadioStation) {
             setToMinRadioStation();
