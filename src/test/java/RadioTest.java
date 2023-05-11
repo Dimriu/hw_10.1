@@ -7,7 +7,7 @@ public class RadioTest {
         Radio radioStation = new Radio(10);
         Assertions.assertEquals(0, radioStation.getMinRadioStation());
         Assertions.assertEquals(9, radioStation.getMaxRadioStation());
-        Assertions.assertEquals(0, radioStation.getCurrentRadioStation());
+        Assertions.assertEquals(10, radioStation.getCurrentRadioStation());
     }
 
     @Test
@@ -15,7 +15,7 @@ public class RadioTest {
         Radio radioStation = new Radio();
         Assertions.assertEquals(0, radioStation.getMinRadioStation());
         Assertions.assertEquals(9, radioStation.getMaxRadioStation());
-        Assertions.assertEquals(0, radioStation.getCurrentRadioStation());
+        Assertions.assertEquals(10, radioStation.getCurrentRadioStation());
 
     }
 
@@ -238,6 +238,5 @@ public class RadioTest {
         int actual = radioStation.getCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
-
 
 }
