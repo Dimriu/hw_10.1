@@ -1,39 +1,61 @@
 public class Radio {
-    private int currentRadioStation = 10;
-    private int maxRadioStation = currentRadioStation - 1;
-    private int minRadioStation = 0;
+
+    private int quantityRadioStations = 10;
+    private int numberMaxRadioStation = quantityRadioStations - 1;
+    private int numberMinRadioStation = 0;
+    private int numberCurrentRadioStation;
     private int currentVolume;
 
-    public Radio(int newRadioStation) {
-        this.currentRadioStation = newRadioStation;
-        this.maxRadioStation = newRadioStation - 1;
-        this.minRadioStation = minRadioStation;
+    public Radio(int quantityRadioStations) {
+        this.quantityRadioStations = quantityRadioStations;
+        this.numberMaxRadioStation = numberMaxRadioStation;
+        this.numberMinRadioStation = numberMinRadioStation;
+        this.numberCurrentRadioStation = numberCurrentRadioStation;
     }
 
     public Radio() {
-        currentRadioStation = this.getCurrentRadioStation();
+        this.quantityRadioStations = quantityRadioStations;
     }
 
-    public void setCurrentRadioStation(int currentRadioStation) {
-        if (currentRadioStation < minRadioStation) {
+    public void setCurrentRadioStation(int newNumberCurrentRadioStation) {
+        if (newNumberCurrentRadioStation < numberMinRadioStation) {
             setToMinRadioStation();
             return;
         }
-        if (currentRadioStation > maxRadioStation) {
+        if (newNumberCurrentRadioStation > numberMaxRadioStation) {
             setToMaxRadioStation();
             return;
         }
-        this.currentRadioStation = currentRadioStation;
+        numberCurrentRadioStation = newNumberCurrentRadioStation;
     }
 
+    public void setToMaxRadioStation() {
+        numberCurrentRadioStation = numberMaxRadioStation;
+    }
+
+    public void setToMinRadioStation() {
+        numberCurrentRadioStation = numberMinRadioStation;
+    }
+
+    public int getCurrentRadioStation() {
+        return numberCurrentRadioStation;
+    }
+
+    public int getMaxRadioStation() {
+        return numberMaxRadioStation;
+    }
+
+    public int getMinRadioStation() {
+        return numberMinRadioStation;
+    }
 
     public void increaseRadioStation() {
-        if (currentRadioStation < maxRadioStation && currentRadioStation > minRadioStation) {
-            currentRadioStation = currentRadioStation + 1;
+        if (numberCurrentRadioStation < numberMaxRadioStation && numberCurrentRadioStation > numberMinRadioStation) {
+            numberCurrentRadioStation = numberCurrentRadioStation + 1;
             return;
         }
-        if (currentRadioStation == minRadioStation) {
-            currentRadioStation = currentRadioStation + 1;
+        if (numberCurrentRadioStation == numberMinRadioStation) {
+            numberCurrentRadioStation = numberCurrentRadioStation + 1;
             return;
         }
         setToMinRadioStation();
@@ -41,49 +63,16 @@ public class Radio {
     }
 
     public void decreaseRadioStation() {
-        if (currentRadioStation < maxRadioStation && currentRadioStation > minRadioStation) {
-            currentRadioStation = currentRadioStation - 1;
+        if (numberCurrentRadioStation < numberMaxRadioStation && numberCurrentRadioStation > numberMinRadioStation) {
+            numberCurrentRadioStation = numberCurrentRadioStation - 1;
             return;
         }
-        if (currentRadioStation == maxRadioStation) {
-            currentRadioStation = currentRadioStation - 1;
+        if (numberCurrentRadioStation == numberMaxRadioStation) {
+            numberCurrentRadioStation = numberCurrentRadioStation - 1;
             return;
         }
         setToMaxRadioStation();
         return;
-    }
-
-    public int getCurrentRadioStation() {
-        return currentRadioStation;
-    }
-
-    public int getMaxRadioStation() {
-        return maxRadioStation;
-    }
-
-    public int getMinRadioStation() {
-        return minRadioStation;
-    }
-
-
-    public void setToMaxRadioStation() {
-        currentRadioStation = maxRadioStation;
-    }
-
-    public void setToMinRadioStation() {
-        currentRadioStation = minRadioStation;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
-
-    public void setToMinVolume() {
-        currentVolume = 0;
-    }
-
-    public void setToMaxVolume() {
-        currentVolume = 100;
     }
 
     public void setCurrentVolume(int newCurrentVolume) {
@@ -97,6 +86,20 @@ public class Radio {
         }
         currentVolume = newCurrentVolume;
     }
+
+    public void setToMinVolume() {
+        currentVolume = 0;
+    }
+
+    public void setToMaxVolume() {
+        currentVolume = 100;
+    }
+
+
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
+
 
     public void increaseVolume() {
         if (currentVolume < 100 && currentVolume > 0) {
