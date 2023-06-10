@@ -39,9 +39,9 @@ public class RadioTest {
 
     @Test
     public void shouldSetRadioStation() {
-        Radio radioStation = new Radio();
-        radioStation.setCurrentRadioStation(5);
-        int expected = 5;
+        Radio radioStation = new Radio(20);
+        radioStation.setCurrentRadioStation(15);
+        int expected = 15;
         int actual = radioStation.getCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }

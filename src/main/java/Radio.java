@@ -7,14 +7,10 @@ public class Radio {
     private int currentVolume;
 
     public Radio(int quantityRadioStations) {
-        this.quantityRadioStations = quantityRadioStations;
-        this.numberMaxRadioStation = numberMaxRadioStation;
-        this.numberMinRadioStation = numberMinRadioStation;
-        this.numberCurrentRadioStation = numberCurrentRadioStation;
+        this.numberMaxRadioStation = quantityRadioStations - 1;
     }
 
     public Radio() {
-        this.quantityRadioStations = quantityRadioStations;
     }
 
     public void setCurrentRadioStation(int newNumberCurrentRadioStation) {
